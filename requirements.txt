@@ -1,0 +1,7 @@
+openai
+langchain
+faiss-cpu
+chromadb
+tiktoken
+unstructured
+pandas

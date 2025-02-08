@@ -1,0 +1,82 @@
+[
+  {
+      "query_id": "1",
+      "question": "What is Retrieval-Augmented Generation (RAG) in AI?"
+  },
+  {
+      "query_id": "2",
+      "question": "How does RAG improve the accuracy of AI-generated responses?"
+  },
+  {
+      "query_id": "3",
+      "question": "What are the key components of a RAG-based system?"
+  },
+  {
+      "query_id": "4",
+      "question": "How does RAG differ from traditional generative AI models?"
+  },
+  {
+      "query_id": "5",
+      "question": "What are the main applications of RAG in natural language processing?"
+  },
+  {
+      "query_id": "6",
+      "question": "How does RAG handle factual inconsistencies in AI-generated content?"
+  },
+  {
+      "query_id": "7",
+      "question": "What role does a retriever play in a RAG model?"
+  },
+  {
+      "query_id": "8",
+      "question": "How does the generator in RAG use retrieved documents to improve responses?"
+  },
+  {
+      "query_id": "9",
+      "question": "What are the challenges associated with implementing RAG models?"
+  },
+  {
+      "query_id": "10",
+      "question": "How does RAG enhance the explainability of AI-generated answers?"
+  },
+  {
+      "query_id": "11",
+      "question": "What are some popular frameworks or tools for building RAG models?"
+  },
+  {
+      "query_id": "12",
+      "question": "How does RAG contribute to AI-driven search engines?"
+  },
+  {
+      "query_id": "13",
+      "question": "What types of data sources are best suited for RAG retrieval?"
+  },
+  {
+      "query_id": "14",
+      "question": "How does RAG improve real-time question-answering systems?"
+  },
+  {
+      "query_id": "15",
+      "question": "What are some real-world examples of RAG in use today?"
+  },
+  {
+      "query_id": "16",
+      "question": "How does RAG mitigate hallucinations in generative AI models?"
+  },
+  {
+      "query_id": "17",
+      "question": "What are the differences between fine-tuned LLMs and RAG-enhanced models?"
+  },
+  {
+      "query_id": "18",
+      "question": "How can RAG be optimized for faster and more efficient retrieval?"
+  },
+  {
+      "query_id": "19",
+      "question": "What are the best practices for training a high-performing RAG model?"
+  },
+  {
+      "query_id": "20",
+      "question": "What are the future advancements expected in RAG technology?"
+  }
+]
