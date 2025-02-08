@@ -25,7 +25,6 @@ cd src
 python main.py
 
 This script will:
-
 Load and process documents
 Split them into chunks
 Create or load a FAISS index
