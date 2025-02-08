@@ -5,26 +5,30 @@ This project enables efficient document retrieval and query answering using FAIS
 Prerequisites
 
 Ensure you have the following installed:
+
 Python 3.8+
+
 pip package manager
+
 OpenAI API key
+
 
 **Installation and Setup**
 
-Step 1: Clone the Repository
+**Step 1:** Clone the Repository
 git clone https://github.com/AbioyeSamuel/RAG_pipeline.git
 cd Rag_Pipeline
 
-Step 2. Install Required Dependencies
+**Step 2:** Install Required Dependencies
 pip install -r requirements.txt
 
-Step 3. Open the .env file for Environment Variables
+**Step 3:** Open the .env file for Environment Variables
 Add your OpenAI API key:
 OPENAI_API_KEY=your-api-key-here
 
 **Running the Solution**
 
-Step 1: Process Documents and Build FAISS Index
+**Step 1:** Process Documents and Build FAISS Index
 
 Run the script from the src directory: 
 cd src
@@ -43,10 +47,9 @@ Generate responses using GPT-4o
 
 Save results to data/results.json
 
-Step 2: View the Results
+**Step 2:** View the Results
 
 Once the script runs successfully, open the data/results.json file to see the output:
 
 cat data/results.json  # On macOS/Linux
-
 type data\results.json  # On Windows
