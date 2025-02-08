@@ -52,4 +52,5 @@ Save results to data/results.json
 Once the script runs successfully, open the data/results.json file to see the output:
 
 cat data/results.json  # On macOS/Linux
+
 type data\results.json  # On Windows
