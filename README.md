@@ -41,20 +41,6 @@ cd src
 
 python main.py
 
-This script will:
-
-Load and process documents
-
-Split them into chunks
-
-Create or load a FAISS index
-
-Process queries and retrieve relevant documents
-
-Generate responses using GPT-4o
-
-Save results to data/results.json
-
 **Step 2:** View the Results
 
 Once the script runs successfully, open the data/results.json file to see the output:
