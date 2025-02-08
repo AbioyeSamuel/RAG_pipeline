@@ -16,14 +16,19 @@ OpenAI API key
 **Installation and Setup**
 
 **Step 1:** Clone the Repository
+
 git clone https://github.com/AbioyeSamuel/RAG_pipeline.git
+
 cd Rag_Pipeline
 
 **Step 2:** Install Required Dependencies
-pip install -r requirements.txt
+
+**pip install -r requirements.txt**
 
 **Step 3:** Open the .env file for Environment Variables
+
 Add your OpenAI API key:
+
 OPENAI_API_KEY=your-api-key-here
 
 **Running the Solution**
@@ -31,10 +36,13 @@ OPENAI_API_KEY=your-api-key-here
 **Step 1:** Process Documents and Build FAISS Index
 
 Run the script from the src directory: 
+
 cd src
+
 python main.py
 
 This script will:
+
 Load and process documents
 
 Split them into chunks
