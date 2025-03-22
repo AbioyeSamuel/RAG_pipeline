@@ -1,5 +1,6 @@
 import os
 import json
+from access_control import filter_documents_by_role
 import openai
 import faiss
 import pickle
@@ -10,6 +11,9 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import TextLoader, PyPDFLoader
 from langchain_community.llms import OpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from auth import authenticate_user
+from log import log_access
+
 
 # Load environment variables
 load_dotenv()
@@ -63,8 +67,9 @@ def create_faiss_index(chunks, index_path=INDEX_PATH):
     return vector_store
 
 # Retrieve top K relevant documents
-def retrieve_documents(query, vector_store, top_k=3):
-    return vector_store.similarity_search(query, k=top_k)
+def retrieve_documents(query, vector_store, role_id, top_k=3):
+    retrieved_docs = vector_store.similarity_search(query, k=top_k)
+    return filter_documents_by_role(role_id, retrieved_docs)
 
 # Generate response using GPT-4
 def generate_response(query, retrieved_docs, max_retries=5):
@@ -98,6 +103,15 @@ def load_queries(file_path):
 
 # Main function
 def main():
+    # Prompt for user credentials
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
+    user_data = authenticate_user(username, password)
+    if not user_data:
+        print("Authentication failed.")
+        return
+    role_id = user_data["role_id"]
+    user_id = user_data["user_id"]
     try:
         # Load and process documents
         documents = load_documents_from_directory(DATA_DIR)
@@ -114,8 +128,14 @@ def main():
         results = []
         for query_data in queries:
             query = query_data["question"]
-            retrieved_docs = retrieve_documents(query, vector_store)
+            retrieved_docs = retrieve_documents(query, vector_store, role_id)
             response = generate_response(query, retrieved_docs)
+            
+            # Log access for each retrieved document
+            for doc in retrieved_docs:
+                # Assume each doc has an 'id' in metadata; if not, use a fallback value.
+                doc_id = doc.metadata.get("id", -1)
+                log_access(user_id, doc_id, "GRANTED")
             
             results.append({
                 "query_id": query_data["query_id"],
